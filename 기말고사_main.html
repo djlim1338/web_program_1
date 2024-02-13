@@ -1,0 +1,152 @@
+<html>
+    <head>
+        <title>기말고사 프로젝트</title>
+        <link rel=stylesheet type="text/css" href=".\기말고사_main.css" />
+
+        <style>
+            ._iconSize {
+                width:50px;
+                height:50px;
+            }
+
+            #_커뮤니티_글쓰기 {
+                margin-left:150px;
+                display:none;
+            }
+
+            #_구글검색바 {
+                margin:auto;
+                margin-top:30px;
+                width:500px;
+                border-width:1px;
+                border-color:black;
+                border-style:solid;
+            }
+
+            #_구글검색입력창 {
+                width:84%;
+                height:110%;
+                border:none;
+            }
+
+            #__구글검색버튼 {
+            }
+        </style>
+    </head>
+
+    <body>
+        <div id='_top'><a name='top'></a></div>
+        <header>
+            <a href="기말고사_main.html" target=_self><img src="사진자료/Logo/dap195dapa_pic01.jpg"></a>
+            <h1>도양시봉</h1>
+            
+            <table align=right>
+                <form action="" method="POST">
+                    <tbody>
+                            <tr> 
+                                <td colspan=3><input type="text" value="ID" name="ID" size=10></td>  
+                                <td rowspan=2><input type=submit value="로그인" name="LogIn"></td>
+                            </tr>
+
+                            <tr> 
+                                <td colspan=3><input type="password" value="PASSWORD" name="PASSWORD" size=10></td> 
+                            </tr>
+
+                            <tr> 
+                                <td colspan=4><a href='./메뉴/기말고사_회원가입_창.html' target=_self>회원가입</a></td>
+                            </tr>
+                    </tbody>
+                </form>
+            </table>
+        </header>
+
+        <nav onmouseover="_FmenuOptionOpen();" onmouseout="_FmenuOptionClose();">
+            <ul id='_메뉴'>
+                <li><a href='./메뉴/기말고사_메인_창.html' target=iframe_main01>메인</a></li>
+                <li>/</li>
+                <li><a href='./메뉴/기말고사_소개_창.html' target=iframe_main01>소개</a></li>
+                <li>/</li>
+                <li><a href='./메뉴/기말고사_공지사항_창.html' target=iframe_main01>공지사항</a></li>
+                <li>/</li>
+                <li><a href='./메뉴/기말고사_커뮤니티_창.html' target=iframe_main01>커뮤니티</a></li>
+                <li>/</li>
+                <li><a href='./메뉴/기말고사_자료실_창.html' target=iframe_main01>자료실</a></li>
+                <li>/</li>
+                <li><a href='./메뉴/기말고사_구매_창.html' target=iframe_main01>구매</a></li>
+            </ul>
+            <div>
+                <a id='_커뮤니티_글쓰기' href='./메뉴/기말고사_커뮤니티_글쓰기_창.html' target=iframe_main01>글쓰기</a>
+            </div>
+        </nav>
+
+        <article>
+            <div id='_remot'>
+                <table>
+                    <tbody>
+                        <tr> <td><a href='#top'><img src='./사진자료/Remot/화살표UP.jpg'></a> </td> </tr>
+                        <tr> <td><a href='#bottom'><img src='./사진자료/Remot/화살표DOWN.jpg'></a> <br></td> </tr>
+                    </tbody>
+                </table>
+            </div>
+            <iframe id="iframe_main01ID"
+                name="iframe_main01"
+                frameborder=0
+                scrolling=no
+                src='./메뉴/기말고사_메인_창.html'
+            >
+            </iframe>
+        </article>
+
+        <aside>
+
+            <table align=center>
+                <tbody>
+                    <tr>
+                        <td><a href="https://www.korapis.or.kr/jsp/main.jsp" target=_blank><img src="사진자료/Logo/file_20181212_181914.jpg"></a></td>
+                        <td><a href="http://urbanbeesseoul.com/" target=_blank><img src="사진자료/Logo/ubs_logo.png"></a></td>
+                        <td><a href="http://bee-mart.co.kr/" target=_blank><img src="./사진자료/Logo/beehouse.jpg"></a></td>
+                        <td><a href="https://google.co.kr" target=_blank><img src="./사진자료/Logo/google_icon.jpg"></a></td>
+                        <td><a href="https://naver.com" target=_blank><img src="./사진자료/Logo/naver_icon.jpg"></a></td>
+                        <td><a href="https://ko.wikipedia.org/wiki/%EC%96%91%EB%B4%89" target=_blank><img src="./사진자료/Logo/4934-2842-wikipedia-logo-kx-1.jpg"></a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.korapis.or.kr/jsp/main.jsp" target=_blank>한국 양봉협회</a></td>
+                        <td><a href="http://urbanbeesseoul.com/" target=_blank>어반비즈 서울</a></td>
+                        <td><a href="http://bee-mart.co.kr/" target=_blank>불로양봉원</a></td>
+                        <td><a href="https://google.co.kr" target=_blank>구글</a></td>
+                        <td><a href="https://naver.com" target=_blank>네이버</a></td>
+                        <td><a href="https://ko.wikipedia.org/wiki/%EC%96%91%EB%B4%89" target=_blank>위키백과(양봉)</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </aside>
+
+        <footer>
+            <div id='_구글검색바'>
+                <input id='_구글검색입력창' type=text name='_구글검색입력창' value=''>
+                <a id='_검색링크' href='' target='_blank'><input id='_구글검색버튼' type=button name='검색' value='구글 검색' onclick='_FgoogleSearch(this);'></a>
+            </div>
+        </footer>
+        <a name='bottom'></a>
+
+        <script>
+            var _VmenuOption = document.getElementById('_커뮤니티_글쓰기');
+            var _Vmenu = document.getElementById('_메뉴');
+
+            function _FmenuOptionOpen() {
+                _VmenuOption.style.display = 'block';
+            }
+            function _FmenuOptionClose() {
+                _VmenuOption.style.display = 'none';
+            }
+
+            function _FgoogleSearch(_Vvalue) {
+                var _Vlink창 = document.getElementById('_구글검색입력창');
+                var _Vlink = _Vlink창.value;
+                var _VlinkMove = document.getElementById('_검색링크');
+                _VlinkMove.href = 'https://www.google.co.kr/search?q=' + _Vlink;
+            }
+        </script>
+
+    </body>
+</html>

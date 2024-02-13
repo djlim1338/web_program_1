@@ -1,0 +1,63 @@
+<html>
+    <head>
+        <title>기말고사 메인 창</title>
+        <link rel=stylesheet type="text/css" href='./기말고사_메뉴.css' />
+
+        <style>
+            #_글쓰기 {
+                width:60%;
+                padding:20px;
+                margin:auto;
+                text-align:center;
+            }
+
+            #_테이블 {
+                display:inline;
+                margin:auto;
+            }
+
+            #_제목 {
+                width:300px;
+            }
+
+            #_메모 {
+                resize:none;
+            }
+
+            #_올리기_버튼 {
+                margin-right:10px;
+            }
+
+            body {
+                background-color:rgba(196, 204, 83, 0.5);
+            }
+        </style>
+    </head>
+
+    <body>
+        <div id='_글쓰기'>
+            <form action='' method='post'>
+            <table id='_테이블'>
+                <thead>
+                </thead>
+
+                <tbody>
+                    <tr> <td id='_제목'><input type=text name='title' value='제목' size='96' onfocus=this.value=''></td>
+                        <td><select name=카테고리 >
+                            <option>일반</option>
+                            <option>질문</option>
+                            <option>사용후기</option>
+                            <option>방명록</option>
+                            <option>잡담</option>
+                        </td>
+                    </tr>
+                    <tr> <td colspan="2"><textarea id='_메모' name='memo' rows='15' cols='110' onfocus=this.value=''>내용 입력</textarea></td> </tr>
+                    <tr> <td><input type=file name='file1'></td> </tr>
+                    <tr> <td><input id='_올리기_버튼' type='submit' value='올리기'><input type='reset' value='취소'></td> </tr>
+
+                </tbody>
+            </table>
+            </form>
+        </div>
+    </body>
+</html>

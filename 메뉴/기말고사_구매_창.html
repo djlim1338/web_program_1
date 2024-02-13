@@ -1,0 +1,250 @@
+<html>
+    <head>
+        <title>기말고사 구매 창</title>
+        <link rel=stylesheet type="text/css" href='./기말고사_메뉴.css' />
+
+        <style>
+            #_물품_선택_창 {
+                width:80%;
+                margin:auto;
+            }
+
+            #_물품_선택_테이블 {
+                margin:auto;
+            }
+
+            #_출력창 {
+                display:grid;
+                grid-template-columns:1.5fr 1fr 1fr;
+                grid-template-areas:
+                '물품출력창 가격출력창 구매확인창'
+                ;
+
+                width:50%;
+                margin:auto;
+                margin-top:100px;
+                padding:50px;
+                border-radius:50px;
+                border-width:1px;
+                border-color:black;
+                border-style:solid;
+            }
+
+            #_물품_출력_창 {
+                grid-area:'물품출력창';
+                color:green;
+            }
+
+            #_가격_출력_창 {
+                grid-area:'가격출력창';
+                color:blue;
+            }
+
+            #_구매창 {
+                grid-area:'구매확인창';
+            }
+
+            #_구매창 > input {
+                margin:10px;
+            }
+
+            ._창tag {
+                font-size:1.5em;
+            }
+
+            ._photo {
+                margin:20px;
+                width:150px;
+                height:150px;
+            }
+
+            ._tag {
+                width:150px;
+                font-size:0.95em;
+                width:150px;
+                height:30px;
+                text-align:center;
+            }
+
+            ._가격 {
+                color:blue;
+            }
+
+            ._수량 {
+                color:red;
+            }
+
+            ._제품이름 {
+                color:green;
+            }
+
+            ._상품_수량 {
+                width:40px;
+            }
+
+            ._상품_체크박스 {
+                width:19px;
+                height:19px;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div id='_물품_선택_창'>
+            <table id='_물품_선택_테이블'>
+                <thead>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><img class='_photo' src='../사진자료/판매물품/도시양봉_책.jpg' title='도시양봉 [책]'></td>
+                        <td><img class='_photo' src='../사진자료/판매물품/양봉사계절관리법_책.jpg' title='양봉 사계절 관리법 [책]'></td>
+                        <td><img class='_photo' src='../사진자료/판매물품/곤충연대기_책.jpg' title='곤충 연대기 [책]'></td>
+                        <td><img class='_photo' src='../사진자료/판매물품/600가지꽃도감_책.jpg' title='600가지 꽃 도감 [책]'></td>
+                        <td><img class='_photo' src='../사진자료/판매물품/도시양봉을하다_책.jpg' title='도시 양봉을 하다 [책]'></td>
+                        <td><img class='_photo' src='../사진자료/판매물품/꿀벌과양봉_책.jpg' title='꿀벌과 양봉 [책]'></td>
+                    </tr>
+                    <tr>
+                        <td class='_tag'>도시양봉 [책] <br> <b class='_가격'>14,000\</b></td>
+                        <td class='_tag'>양봉 사계절 관리법 [책] <br> <b class='_가격'>13,000\</b></td>
+                        <td class='_tag'>곤충 연대기 [책] <br> <b class='_가격'>17,000\</b></td>
+                        <td class='_tag'>600가지 꽃 도감 [책] <br> <b class='_가격'>12,000\</b></td>
+                        <td class='_tag'>도시 양봉을 하다 [책] <br> <b class='_가격'>16,000\</b></td>
+                        <td class='_tag'>꿀벌과 양봉 [책] <br> <b class='_가격'>20,000\</b></td>
+                    </tr>
+                    <tr>
+                        <td class='_tag'>
+                            <input class='_상품_수량' type='number' name='도시양봉 [책]' size=1 value=1 step=1 min=1 onchange="_FcheckBox확인();">개
+                            <input class='_상품_체크박스' type="checkbox" name='도시양봉 [책]' value='14000' onclick="_FcheckBox확인();">담기
+                        </td>
+                        <td class='_tag'>
+                                <input class='_상품_수량' type='number' name='양봉 사계절 관리법 [책]' size=1 value=1 step=1 min=1 onchange='_FcheckBox확인();'>개
+                            <input class='_상품_체크박스' type="checkbox" name='양봉 사계절 관리법 [책]' value='13000' onclick="_FcheckBox확인();">담기
+                        </td>
+                        <td class='_tag'>
+                                <input class='_상품_수량' type='number' name='곤충 연대기 [책]' size=1 value=1 step=1 min=1 onchange='_FcheckBox확인();'>개
+                            <input class='_상품_체크박스' type="checkbox" name='곤충 연대기 [책]' value='17000' onclick="_FcheckBox확인();">담기
+                        </td>
+                        <td class='_tag'>
+                                <input class='_상품_수량' type='number' name='600가지 꽃 도감 [책]' size=1 value=1 step=1 min=1 onchange='_FcheckBox확인();'>개
+                            <input class='_상품_체크박스' type="checkbox" name='600가지 꽃 도감 [책]' value='12000' onclick="_FcheckBox확인();">담기
+                        </td>
+                        <td class='_tag'>
+                                <input class='_상품_수량' type='number' name='도시 양봉을 하다 [책]' size=1 value=1 step=1 min=1 onchange='_FcheckBox확인();'>개
+                            <input class='_상품_체크박스' type="checkbox" name='도시 양봉을 하다 [책]' value='16000' onclick="_FcheckBox확인();">담기
+                        </td>
+                        <td class='_tag'>
+                                <input class='_상품_수량' type='number' name='꿀벌과 양봉 [책]' size=1 value=1 step=1 min=1 onchange='_FcheckBox확인();'>개
+                            <input class='_상품_체크박스' type="checkbox" name='꿀벌과 양봉 [책]' value='20000' onclick="_FcheckBox확인();">담기
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><img class='_photo' src='../사진자료/판매물품/잡화꿀.jpg' title='잡화꿀2.4kg'></td>
+                        <td><img class='_photo' src='../사진자료/판매물품/벌집꿀.jpg' title='벌집꿀500g'></td>
+                        <td><img class='_photo' src='../사진자료/판매물품/벌꿀주.jpg' title='벌꿀주 375ml 2병'></td>
+                        <td><img class='_photo' src='../사진자료/판매물품/프로폴리스.jpg' title='프로폴리스 365g'></td>
+                        <td><img class='_photo' src='../사진자료/판매물품/밀랍.jpg' title='천연 밀랍 500g'></td>
+                        <td><img class='_photo' src='../사진자료/판매물품/화분.jpg' title='화분(꽃가루) 1kg'></td>
+                    </tr>
+                    <tr>
+                        <td class='_tag'>잡화꿀 2.4kg <br> <b class='_가격'>15,000\</b></td>
+                        <td class='_tag'>벌집꿀 500g <br> <b class='_가격'>10,000\</b></td>
+                        <td class='_tag'>벌꿀주 375ml 2병 <br> <b class='_가격'>70,000\</b></td>
+                        <td class='_tag'>프로폴리스 365g <br> <b class='_가격'>50,000\</b></td>
+                        <td class='_tag'>천연 밀랍 500g <br> <b class='_가격'>10,000\</b></td>
+                        <td class='_tag'>화분(꽃가루) 1kg <br> <b class='_가격'>50,000\</b></td>
+                    </tr>
+                    <tr>
+                        <td class='_tag'>
+                            <input class='_상품_수량' type='number' name='잡화꿀 2.4kg' size=1 value=1 step=1 min=1 onchange="_FcheckBox확인();">개
+                            <input class='_상품_체크박스' type="checkbox" name='잡화꿀 2.4kg' value='15000' onclick="_FcheckBox확인();">담기
+                        </td>
+                        <td class='_tag'>
+                                <input class='_상품_수량' type='number' name='벌집꿀 500g' size=1 value=1 step=1 min=1 onchange='_FcheckBox확인();'>개
+                            <input class='_상품_체크박스' type="checkbox" name='벌집꿀 500g' value='10000' onclick="_FcheckBox확인();">담기
+                        </td>
+                        <td class='_tag'>
+                                <input class='_상품_수량' type='number' name='벌꿀주 375ml 2병' size=1 value=1 step=1 min=1 onchange='_FcheckBox확인();'>개
+                            <input class='_상품_체크박스' type="checkbox" name='벌꿀주 375ml 2병' value='70000' onclick="_FcheckBox확인();">담기
+                        </td>
+                        <td class='_tag'>
+                                <input class='_상품_수량' type='number' name='프로폴리스 365g' size=1 value=1 step=1 min=1 onchange='_FcheckBox확인();'>개
+                            <input class='_상품_체크박스' type="checkbox" name='프로폴리스 365g' value='50000' onclick="_FcheckBox확인();">담기
+                        </td>
+                        <td class='_tag'>
+                                <input class='_상품_수량' type='number' name='천연 밀랍 500g' size=1 value=1 step=1 min=1 onchange='_FcheckBox확인();'>개
+                            <input class='_상품_체크박스' type="checkbox" name='천연 밀랍 500g' value='10000' onclick="_FcheckBox확인();">담기
+                        </td>
+                        <td class='_tag'>
+                                <input class='_상품_수량' type='number' name='화분(꽃가루) 1kg' size=1 value=1 step=1 min=1 onchange='_FcheckBox확인();'>개
+                            <input class='_상품_체크박스' type="checkbox" name='화분(꽃가루) 1kg' value='50000' onclick="_FcheckBox확인();">담기
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div id='_출력창'>
+            <div id='_물품_출력_창'>
+                <b class='_창tag'>선택한 상품</b> <div id='_상품_체크박스창'></div>
+            </div>
+
+            <div id='_가격_출력_창'>
+                <b class='_창tag'>가격 총합</b> <div id='_가격합산창'><b class='_가격'>0원</b></div>
+            </div>
+            
+            <div id='_구매창'>
+                <input type='button' value='구입하기'>
+                <input type='button' value='취소하기' onclick="_F취소();">
+            </div>
+        </div>
+
+        <script>
+            var _V가격창 = document.getElementById('_가격합산창');
+            var _V상품_체크박스창 = document.getElementById('_상품_체크박스창');
+            var _V가격합산 = 0;
+            var _Vcount = 0;
+
+            var _V상품_체크박스 = document.getElementsByClassName('_상품_체크박스');
+            var _V상품_수량 = document.getElementsByClassName('_상품_수량');
+
+            function _FcheckBox확인() {
+                _V가격합산 = 0;
+                _V상품_체크박스창.innerHTML = '';
+
+                for (_Vcount = 0; _Vcount < _V상품_체크박스.length; _Vcount++) {
+                    if (_V상품_체크박스[_Vcount].checked) {
+                        if (_V상품_수량[_Vcount].value <= 0){
+                            _V상품_수량[_Vcount].value = 1;
+                            confirm('수량은 1개 이상만 선택할 수 있습니다.');
+                        }
+                        _V가격합산 += _V상품_체크박스[_Vcount].value * _V상품_수량[_Vcount].value;
+                        _F상품출력();
+                    }
+                }
+
+                _F가격출력();
+            }
+
+            function _F상품출력() {
+                _V상품_체크박스창.innerHTML += "<b class='_제품이름'>" + _V상품_체크박스[_Vcount].name + "</b> x <b class='_수량'>" + _V상품_수량[_Vcount].value + '개 </b><br>';
+            }
+
+            function _F가격출력() {
+                _V가격창.innerHTML = "<b class='_가격'>" + _V가격합산 + '원</b>';
+            }
+            
+            function _F취소() {
+                _V가격합산 = 0;
+                _V상품_체크박스창.innerHTML = '';
+
+                for (_Vcount = 0; _Vcount < _V상품_체크박스.length; _Vcount++) {
+                    _V상품_체크박스[_Vcount].checked = false;
+                    _V상품_수량[_Vcount].value = 1;
+                }
+
+                _F가격출력();
+            }
+        </script>
+    </body>
+</html>

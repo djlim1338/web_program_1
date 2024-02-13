@@ -1,0 +1,57 @@
+<html>
+    <head>
+        <title>기말고사 공지사항 창</title>
+        <link rel=stylesheet type="text/css" href='./기말고사_메뉴.css' />
+    </head>
+
+    <body>
+        
+        <div class='_게시글_묶음'>
+            <div class='_게시글_블럭'>
+                <div class='_게시글_블럭_제목'>제목</div>
+                <div class='_게시글_블럭_작성자'>작성자</div>
+            </div>
+
+            <div class='_게시글_블럭' onclick='_FdisplayClick(0);'>
+                <div class='_게시글_블럭_제목'>사이트 규칙</div>
+                <div class='_게시글_블럭_작성자'>제작자</div>
+            </div>
+            <div class='_게시글_내용'>
+                    <img class='_X표' src='../사진자료/Remot/x표.png' onclick='_FdisplayClick(-1);'>
+                <p>우리는 하나되어 싸워야 한다.</p>
+                <p>아이어를 되찾으리라.</p>
+                <p>뭠마</p>
+            </div>
+
+            <div class='_게시글_블럭' onclick='_FdisplayClick(1);'>
+                <div class='_게시글_블럭_제목'>공동구매 안내</div>
+                <div class='_게시글_블럭_작성자'>운영자</div>
+            </div>
+            <div class='_게시글_내용'>
+                <img class='_X표' src='../사진자료/Remot/x표.png' onclick='_FdisplayClick(-1);'>
+                <p>무었을 써야 하는가...</p>
+            </div>
+        </div>
+
+        <script>
+            var _Vdisplay블럭 = document.getElementsByClassName('_게시글_블럭');
+            var _Vdisplay내용 = document.getElementsByClassName('_게시글_내용');
+            var _VdisplayCount = 0;
+
+            for (_VdisplayCount = 0; _VdisplayCount < _Vdisplay내용.length; _VdisplayCount++) {
+                _Vdisplay내용[_VdisplayCount].style.display = 'none';
+            }
+
+            function _FdisplayClick(value) {
+                for (_VdisplayCount = 0; _VdisplayCount < _Vdisplay내용.length; _VdisplayCount++) {
+                    if (_VdisplayCount != value) {
+                        _Vdisplay내용[_VdisplayCount].style.display = 'none';
+                    }
+                    else {
+                        _Vdisplay내용[_VdisplayCount].style.display = 'block';
+                    }
+                }
+            }
+        </script>
+    </body>
+</html>

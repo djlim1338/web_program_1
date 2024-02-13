@@ -1,0 +1,87 @@
+<html>
+    <head>
+        <title>기말고사 메인 창</title>
+        <link rel=stylesheet type="text/css" href='./기말고사_메뉴.css' />
+
+        <style>
+            ._메인_벌사진 {
+                margin:auto;
+                width:500px;
+                height:350px;
+                margin-top:100px;
+            }
+
+            ._메인_벌사진 img {
+                display:block;
+                margin:auto;
+                transition: all ease 2s 0s;
+            }
+
+            ._사진넘기는버튼 {
+                width:100px;
+                height:50px;
+            }
+            
+            #_왼쪽화살표 {
+                float:left;
+                margin-left:100px;
+            }
+
+            #_오른쪽화살표 {
+                float:right;
+                margin-right:100px;
+            }
+
+            #_numberDisplay {
+                display:inline;
+                margin-left:8%;
+                font-size:2em;
+                text-align:center;
+                line-height:50px;
+            }
+
+            #_IMG {}
+        </style>
+    </head>
+
+    <body>
+        <div class='_메인_벌사진'>
+            <img ID='_IMG' src=''>
+            <img id='_왼쪽화살표' class='_사진넘기는버튼' src='../사진자료/Remot/화살표LEFT.jpg' onclick='_FchangeImgArrow(1);'>
+            <div id='_numberDisplay'>dma</div>
+            <img id='_오른쪽화살표' class='_사진넘기는버튼' src='../사진자료/Remot/화살표RIGHT.jpg' onclick='_FchangeImgArrow(0);'>
+        </div>
+        <script>
+            var _VimgWindow = document.getElementById('_IMG');
+            var _Vcount = 0;
+            var _VTransparency = 0;
+
+            var _VtestDisplay = document.getElementById('_numberDisplay');
+
+            _FchangeImg ();
+            var _VloopImg = setInterval(_FchangeImg, 1500);
+
+            function _FchangeImg () {
+                _Vcount++;
+                if (_Vcount > 16) _Vcount = 1;
+                if (_Vcount < 1) _Vcount = 16;
+                _VimgWindow.src = '../사진자료/bees/bee' + _Vcount + '.jpg';
+                _VimgWindow.style.width = '100%';
+                _VimgWindow.style.height = '300px';
+
+                _VtestDisplay.innerHTML = _Vcount;
+            }
+
+            function _FchangeImgArrow(_Vvalue) {
+                clearInterval(_VloopImg);
+
+                if (_Vvalue) {
+                    _Vcount -= 2;
+                }
+
+                _FchangeImg ();
+                _VloopImg = setInterval(_FchangeImg, 2000);
+            }
+        </script>
+    </body>
+</html>
